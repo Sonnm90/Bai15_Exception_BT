@@ -1,8 +1,14 @@
 public class Triangle{
 
-    public static void main(String[] args) throws IllegalTriangleException {
+    public static void main(String[] args)  throws IllegalTriangleException {
         Triangle triangle =new Triangle();
-        triangle.triangleSide(1,2,5);
+        try {
+            triangle.triangleSide(1,2,5);
+
+        } catch (IllegalTriangleException illegalTriangleException){
+            System.out.println("Error: "+illegalTriangleException.getMessage());
+        }
+        System.out.println("continue!");
     }
     public  String triangleSide(int side1, int side2, int side3) throws IllegalTriangleException {
         if (side1<=0||side2<=0||side3<=0)
